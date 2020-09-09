@@ -6,9 +6,25 @@ It is intended to pass the express request context to the internal model functio
 example of usage:
 
 
+call the module functions like this:
+```
+...
+oauth.token(request, response, null, null, req).then((token)=> {
+...
+oauth.authenticate(request, response,{scope: scopes}, null, req).then((token)=> {
+```
 
+then, in your model, add the extra `req` parameter
 
+```
+...
+function getUser(username, password, req)
+...
+function verifyScope(token, scopes, req)
+...
+```
 
+I've added the req parameter to all the grant-types and all the functions in the model.
 
 
 
