@@ -1,3 +1,20 @@
+# fork info
+
+On this fork of oauth2-server I've modified the function prototypes to include an extra optional parameter: `req`
+It is intended to pass the express request context to the internal model functions, which will allow for example to use a distributed logging solution.
+
+example of usage:
+
+
+
+
+
+
+
+
+
+---
+
 
 # oauth2-server
 
